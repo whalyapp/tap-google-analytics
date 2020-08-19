@@ -4,6 +4,7 @@ import logging
 import json
 import singer
 import socket
+import datetime
 
 from apiclient.discovery import build
 from apiclient.errors import HttpError
@@ -285,13 +286,18 @@ class GAClient:
                 dimensions = row.get('dimensions', [])
                 dateRangeValues = row.get('metrics', [])
 
+
                 for header, dimension in zip(dimensionHeaders, dimensions):
                     data_type = self.lookup_data_type('dimension', header)
+                    # LOGGER.info("Dealing with dimensions - {} - data type {}".format(header, data_type))
 
                     if data_type == 'integer':
                         value = int(dimension)
                     elif data_type == 'number':
                         value = float(dimension)
+                    # we should make the date compatible with most of the SQL system
+                    elif header.startswith(('ga:date')):
+                        value = datetime.datetime.strptime(dimension, '%Y%m%d').strftime('%Y-%m-%d')
                     else:
                         value = dimension
 
