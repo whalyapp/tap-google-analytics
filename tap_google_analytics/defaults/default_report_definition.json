@@ -23,7 +23,9 @@
       "ga:date",
       "ga:source",
       "ga:medium",
-      "ga:socialNetwork"
+      "ga:socialNetwork",
+      "ga:sourceMedium",
+      "ga:adContent"
     ],
     "metrics": [
       "ga:users",
