@@ -21,11 +21,12 @@
     "name": "traffic_sources",
     "dimensions": [
       "ga:date",
+      "ga:channelGrouping",
       "ga:source",
       "ga:medium",
       "ga:socialNetwork",
       "ga:sourceMedium",
-      "ga:adContent"
+      "ga:adContent",
     ],
     "metrics": [
       "ga:users",
@@ -44,6 +45,7 @@
     "name": "revenue_sources",
     "dimensions": [
       "ga:date",
+      "ga:channelGrouping",
       "ga:source",
       "ga:medium",
       "ga:socialNetwork",
