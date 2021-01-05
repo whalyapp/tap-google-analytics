@@ -5,9 +5,12 @@ import json
 import singer
 import socket
 import datetime
-
+import httplib2
+import os
 from apiclient.discovery import build
 from apiclient.errors import HttpError
+from pathlib import Path
+
 
 from oauth2client.service_account import ServiceAccountCredentials
 from oauth2client.client import GoogleCredentials
@@ -25,7 +28,7 @@ NON_FATAL_ERRORS = [
 ]
 
 # Silence the discovery_cache errors
-logging.getLogger('googleapiclient.discovery_cache').setLevel(logging.ERROR)
+logging.getLogger('googleapiclient.discovery_cache').setLevel(logging.DEBUG)
 LOGGER = singer.get_logger()
 
 
@@ -78,7 +81,7 @@ class GAClient:
 
     def initialize_credentials(self, config):
         if 'oauth_credentials' in config:
-            return GoogleCredentials(
+            credentials = GoogleCredentials(
                 access_token=config['oauth_credentials']['access_token'],
                 refresh_token=config['oauth_credentials']['refresh_token'],
                 client_id=config['oauth_credentials']['client_id'],
@@ -87,6 +90,10 @@ class GAClient:
                 token_uri="https://accounts.google.com/o/oauth2/token",
                 user_agent="tap-google-analytics (via singer.io)"
             )
+            logging.info("refreshing access token")
+            credentials.refresh(httplib2.Http())
+            logging.info("refreshed successfully")
+            return credentials
         else:
             return ServiceAccountCredentials.from_json_keyfile_dict(config['client_secrets'], SCOPES)
 
@@ -96,7 +103,7 @@ class GAClient:
         Returns:
             An authorized Analytics Reporting API V4 service object.
         """
-        return build('analyticsreporting', 'v4', credentials=self.credentials)
+        return build('analyticsreporting', 'v4', credentials=self.credentials, cache_discovery=False )
 
     def fetch_metadata(self):
         """
@@ -115,13 +122,26 @@ class GAClient:
         metrics = {}
         dimensions = {}
 
-        # Initialize a Google Analytics API V3 service object and build the service object.
-        # This is needed in order to dynamically fetch the metadata for available
-        #   metrics and dimensions.
-        # (those are not provided in the Analytics Reporting API V4)
-        service = build('analytics', 'v3', credentials=self.credentials)
+        cached_meta_data = Path(__file__).parent.joinpath('defaults', 'metadata_columns_cache.json')
 
-        results = service.metadata().columns().list(reportType='ga', quotaUser=self.quota_user).execute()
+        if os.path.exists(cached_meta_data):
+            # FIXME: for some reason requesting https://analytics.googleapis.com/analytics/v3/metadata/ga/columns?alt=json
+            #        times out every 3rd-4th time, for now just have a hardcoded cache...+
+            #        see https://github.com/googleapis/google-api-python-client/issues/709
+            logging.info("use local cached column metadata")
+            with open(cached_meta_data, "r") as cache_file:
+                results = json.load(cache_file)
+        else:
+            # Initialize a Google Analytics API V3 service object and build the service object.
+            # This is needed in order to dynamically fetch the metadata for available
+            #   metrics and dimensions.
+            # (those are not provided in the Analytics Reporting API V4)
+            service = build('analytics', 'v3', credentials=self.credentials, cache_discovery=False )
+            logging.info("loading meta data")
+            results = service.metadata().columns().list(reportType='ga', quotaUser=self.quota_user).execute()
+            with open("/tmp/reslts.json", "w") as cache_file:
+                logging.info("loaded meta data")
+                json.dump(results, cache_file, indent=4)
 
         columns = results.get('items', [])
 
