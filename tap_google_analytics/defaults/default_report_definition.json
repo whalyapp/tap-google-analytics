@@ -41,6 +41,23 @@
     ]
   },
   {
+    "name": "revenue_sources",
+    "dimensions": [
+      "ga:date",
+      "ga:source",
+      "ga:medium",
+      "ga:socialNetwork",
+      "ga:sourceMedium",
+      "ga:adContent"
+    ],
+    "metrics": [
+      "ga:users",
+      "ga:sessions",
+      "ga:transactions",
+      "ga:transactionRevenue"
+    ]
+  },
+  {
     "name": "pages",
     "dimensions": [
       "ga:date",
