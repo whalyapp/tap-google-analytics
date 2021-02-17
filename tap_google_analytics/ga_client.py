@@ -10,6 +10,7 @@ import os
 from apiclient.discovery import build
 from apiclient.errors import HttpError
 from pathlib import Path
+import traceback
 
 
 from oauth2client.service_account import ServiceAccountCredentials
@@ -31,6 +32,24 @@ NON_FATAL_ERRORS = [
 logging.getLogger('googleapiclient.discovery_cache').setLevel(logging.DEBUG)
 LOGGER = singer.get_logger()
 
+
+# overwrite the backoff logging, so it only logs a warning
+def backoff_logging(details):
+    fmt = "Backing off {0}(...) for {1:.1f}s"
+    msg = fmt.format(details['target'].__name__, details['wait'])
+    logger = logging.getLogger("backoff")
+
+    exc_typ, exc, _ = sys.exc_info()
+    if exc is not None:
+        exc_fmt = traceback.format_exception_only(exc_typ, exc)[-1]
+        msg = "{0} ({1})".format(msg, exc_fmt.rstrip("\n"))
+        logger.warning(msg)
+    else:
+        msg = "{0} ({1})".format(msg, details['value'])
+        logger.info(msg)
+
+
+backoff._log_backoff = backoff_logging
 
 def error_reason(e):
     # For a given HttpError object from the googleapiclient package, this returns the first reason code from
@@ -251,7 +270,9 @@ class GAClient:
     @backoff.on_exception(backoff.expo,
                           (HttpError, socket.timeout),
                           max_tries=9,
-                          giveup=is_fatal_error)
+                          giveup=is_fatal_error,
+                          on_backoff=
+                          )
     def query_api(self, report_definition, pageToken=None):
         """Queries the Analytics Reporting API V4.
 
