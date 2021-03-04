@@ -166,5 +166,23 @@
       "ga:bounceRate",
       "ga:exitRate"
     ]
+  },
+  {
+    "name": "goal_conversions",
+    "dimensions": [
+      "ga:date",
+      "ga:channelGrouping",
+      "ga:source",
+      "ga:medium",
+      "ga:campaign"
+    ],
+    "metrics": [
+      "ga:goal01Completions",
+      "ga:goal02Completions",
+      "ga:goal03Completions",
+      "ga:goal04Completions",
+      "ga:goal05Completions",
+      "ga:goalCompletionsAll"
+    ]
   }
 ]
