@@ -177,7 +177,11 @@
       "ga:campaign"
     ],
     "metrics": [
-      "ga:goal01Completions",
+      "ga:goal1Completions",
+      "ga:goal2Completions",
+      "ga:goal3Completions",
+      "ga:goal4Completions",
+      "ga:goal5Completions",
       "ga:goalCompletionsAll"
     ]
   }
