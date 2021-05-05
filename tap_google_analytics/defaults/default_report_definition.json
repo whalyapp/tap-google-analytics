@@ -184,5 +184,27 @@
       "ga:goal5Completions",
       "ga:goalCompletionsAll"
     ]
+  },
+  {
+    "name": "campaign_adcontent_performance",
+    "dimensions": [
+      "ga:date",
+      "ga:source",
+      "ga:medium",
+      "ga:campaign",
+      "ga:adContent"
+    ],
+    "metrics": [
+      "ga:users",
+      "ga:newUsers",
+      "ga:sessions",
+      "ga:sessionsPerUser",
+      "ga:avgSessionDuration",
+      "ga:pageviews",
+      "ga:pageviewsPerSession",
+      "ga:avgTimeOnPage",
+      "ga:bounceRate",
+      "ga:exitRate"
+    ]
   }
 ]
