@@ -202,9 +202,9 @@
       "ga:avgSessionDuration",
       "ga:pageviews",
       "ga:pageviewsPerSession",
-      "ga:avgTimeOnPage",
       "ga:bounceRate",
-      "ga:exitRate"
+      "ga:transactions",
+      "ga:transactionRevenue"
     ]
   }
 ]
