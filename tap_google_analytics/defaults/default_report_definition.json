@@ -214,14 +214,14 @@
       "ga:source",
       "ga:medium",
       "ga:campaign",
+      "ga:channelGrouping",
       "ga:deviceCategory",
-      "ga:channelGrouping"
-    ],
-    "metrics": [
       "ga:transactionId",
-      "ga:transactionRevenue",
       "ga:sessionsToTransaction",
       "ga:daysToTransaction"
+    ],
+    "metrics": [
+      "ga:transactionRevenue"
     ]
   }
 ]
