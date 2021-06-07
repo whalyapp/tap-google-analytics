@@ -206,5 +206,22 @@
       "ga:transactions",
       "ga:transactionRevenue"
     ]
+  },
+  {
+    "name": "revenue_transactions",
+    "dimensions": [
+      "ga:date",
+      "ga:source",
+      "ga:medium",
+      "ga:campaign",
+      "ga:deviceCategory",
+      "ga:channelGrouping"
+    ],
+    "metrics": [
+      "ga:transactionId",
+      "ga:transactionRevenue",
+      "ga:sessionsToTransaction",
+      "ga:daysToTransaction"
+    ]
   }
 ]
