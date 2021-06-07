@@ -216,9 +216,7 @@
       "ga:campaign",
       "ga:channelGrouping",
       "ga:deviceCategory",
-      "ga:transactionId",
-      "ga:sessionsToTransaction",
-      "ga:daysToTransaction"
+      "ga:transactionId"
     ],
     "metrics": [
       "ga:transactionRevenue"
