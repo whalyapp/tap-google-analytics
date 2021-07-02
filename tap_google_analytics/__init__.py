@@ -76,13 +76,11 @@ def sync(config, state, catalog):
             LOGGER.info('Syncing stream: ' + stream_id)
 
             try:
-                report_definition = ReportsHelper.get_report_definition(stream)
-                results = client.process_stream(report_definition)
-
-                # we write the schema message after we are sure that we could
-                #  fetch records without errors
                 singer.write_schema(stream_id, stream_schema, key_properties)
-                singer.write_records(stream_id, results)
+                report_definition = ReportsHelper.get_report_definition(stream)
+                for page in client.process_stream(report_definition):
+                    singer.write_records(stream_id, page)
+
             except TapGaInvalidArgumentError as e:
                 errors_encountered = True
                 LOGGER.error("Skipping stream: '{}' due to invalid report definition.".format(stream_id))
@@ -150,8 +148,9 @@ def process_args():
     args.config['end_date'] = utils.strftime(end_date ,'%Y-%m-%d')
 
     if end_date < start_date:
-        LOGGER.critical("tap-google-analytics: start_date '{}' > end_date '{}'".format(start_date, end_date))
-        sys.exit(1)
+        LOGGER.info("tap-google-analytics: start_date '{}' > end_date '{}'".format(start_date, end_date))
+        LOGGER.info("Nothing to stream")
+        sys.exit(0)
 
     # If using a service account, validate that the client_secrets.json file exists and load it
     if args.config.get('key_file_location'):
