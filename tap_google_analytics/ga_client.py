@@ -279,7 +279,7 @@ class GAClient:
 
     @backoff.on_exception(backoff.expo,
                           (HttpError, socket.timeout),
-                          max_tries=9,
+                          max_tries=30,
                           giveup=is_fatal_error)
     def query_api(self, report_definition, pageToken=None):
         """Queries the Analytics Reporting API V4.
