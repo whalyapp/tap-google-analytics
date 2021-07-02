@@ -33,17 +33,13 @@ logging.getLogger('googleapiclient.discovery_cache').setLevel(logging.DEBUG)
 LOGGER = singer.get_logger()
 DATE_FORMAT = "%Y-%m-%d"
 def split_days(start_date, end_date):
-    ranges = []
-    now = datetime.datetime.now()
+    dates = []
     current_date = datetime.datetime.strptime(start_date, DATE_FORMAT)
     end_date = datetime.datetime.strptime(end_date, DATE_FORMAT)
     while current_date <= end_date:
-        ranges.append({
-            "start_date": current_date.strftime(DATE_FORMAT),
-            "end_date": current_date.strftime(DATE_FORMAT),
-        })
+        dates.append( current_date.strftime(DATE_FORMAT))
         current_date = current_date + relativedelta(days=1)
-    return ranges
+    return dates
 
 # overwrite the backoff logging, so it only logs a warning
 def backoff_logging(details):
@@ -232,12 +228,12 @@ class GAClient:
 
     def process_stream(self, stream):
         try:
-            date_ranges = split_days(self.start_date, self.end_date)
+            dates = split_days(self.start_date, self.end_date)
             report_definition = self.generate_report_definition(stream)
             nextPageToken = None
-            for date_range in date_ranges:
-                self.start_date = date_range["start_date"]
-                self.end_date = date_range["end_date"]
+            for date in dates:
+                self.start_date = date
+                self.end_date = date
                 LOGGER.info(f"Retrieving data for day {self.start_date}")
                 while True:
                     response = self.query_api(report_definition, nextPageToken)
