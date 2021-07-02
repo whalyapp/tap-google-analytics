@@ -297,7 +297,8 @@ class GAClient:
                 {
                     'viewId': self.view_id,
                     'dateRanges': [{'startDate': self.start_date, 'endDate': self.end_date}],
-                    'pageSize': '1000',
+                    'pageSize': '10000',
+                    "samplingLevel":  "LARGE",
                     'pageToken': pageToken,
                     'metrics': report_definition['metrics'],
                     'dimensions': report_definition['dimensions'],
