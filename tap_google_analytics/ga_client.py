@@ -1,3 +1,4 @@
+import re
 import sys
 import backoff
 import logging
@@ -59,6 +60,14 @@ def backoff_logging(details):
 
 backoff._log_backoff = backoff_logging
 
+
+def _parse_error(e) -> dict:
+    try:
+        return json.loads(e.content.decode('utf-8'))
+    except Exception:
+        return {}
+
+
 def error_reason(e):
     # For a given HttpError object from the googleapiclient package, this returns the first reason code from
     # https://developers.google.com/analytics/devguides/reporting/core/v4/errors if the error's HTTP response
@@ -68,7 +77,7 @@ def error_reason(e):
 
     reason = ''
     try:
-        data = json.loads(e.content.decode('utf-8'))
+        data = _parse_error(e)
         reason = data['error']['errors'][0]['reason']
     except Exception:
         pass
@@ -87,6 +96,14 @@ def is_fatal_error(error):
     # Use list of errors defined in:
     # https://developers.google.com/analytics/devguides/reporting/core/v4/errors
     reason = error_reason(error)
+
+    if reason == "rateLimitExceeded":
+        parsed = _parse_error(error)
+        message = parsed.get("error", {}).get("message")
+        if message is not None and re.match(".*exceeded the daily request limit.*", message):
+            logging.error(message)
+            exit(42)
+
     if reason in NON_FATAL_ERRORS:
         return False
 
