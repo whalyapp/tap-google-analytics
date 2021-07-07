@@ -96,15 +96,19 @@ def is_fatal_error(error):
     # Use list of errors defined in:
     # https://developers.google.com/analytics/devguides/reporting/core/v4/errors
     reason = error_reason(error)
+    parsed = _parse_error(error)
+    message = parsed.get("error", {}).get("message")
 
     if reason == "rateLimitExceeded":
-        parsed = _parse_error(error)
-        message = parsed.get("error", {}).get("message")
         if message is not None and _is_daily_limit(message):
             logging.error(message)
             exit(42)
 
-    print(parsed)
+    log_msg = message
+    if log_msg is None:
+        log_msg = reason
+    logging.warning("request failed with '{}', will retry".format(log_msg))
+
     if reason in NON_FATAL_ERRORS:
         return False
 
