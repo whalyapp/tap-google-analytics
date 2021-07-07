@@ -100,15 +100,24 @@ def is_fatal_error(error):
     if reason == "rateLimitExceeded":
         parsed = _parse_error(error)
         message = parsed.get("error", {}).get("message")
-        if message is not None and re.match(".*exceeded the daily request limit.*", message):
+        if message is not None and _is_daily_limit(message):
             logging.error(message)
             exit(42)
 
+    print(parsed)
     if reason in NON_FATAL_ERRORS:
         return False
 
     LOGGER.critical("Received fatal error %s, reason=%s, status=%s", error, reason, status)
     return True
+
+
+def _is_daily_limit(message: str) -> bool:
+    if re.match(".*exceeded the daily request limit.*", message):
+        return True
+    if re.match(".*\'Requests per day\'.*", message):
+        return True
+    return False
 
 
 class GAClient:
