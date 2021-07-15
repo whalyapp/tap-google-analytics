@@ -68,7 +68,7 @@ class ReportsHelper:
                 "metadata": {
                     "inclusion": "automatic",
                     "table-key-properties": None,
-                    "replication-method": "INCREMENTAL"
+                    "forced-replication-method": "INCREMENTAL"
                 },
                 "breadcrumb": []
             }
