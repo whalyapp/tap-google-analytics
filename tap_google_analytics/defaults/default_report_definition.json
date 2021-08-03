@@ -186,6 +186,50 @@
     ]
   },
   {
+    "name": "goal_conversions1_10",
+    "dimensions": [
+      "ga:date",
+      "ga:channelGrouping",
+      "ga:source",
+      "ga:medium",
+      "ga:campaign"
+    ],
+    "metrics": [
+      "ga:goal1Completions",
+      "ga:goal2Completions",
+      "ga:goal3Completions",
+      "ga:goal4Completions",
+      "ga:goal5Completions",
+      "ga:goal6Completions",
+      "ga:goal7Completions",
+      "ga:goal8Completions",
+      "ga:goal9Completions",
+      "ga:goal10Completions"
+    ]
+  },
+  {
+    "name": "goal_conversions11_20",
+    "dimensions": [
+      "ga:date",
+      "ga:channelGrouping",
+      "ga:source",
+      "ga:medium",
+      "ga:campaign"
+    ],
+    "metrics": [
+      "ga:goal11Completions",
+      "ga:goal12Completions",
+      "ga:goal13Completions",
+      "ga:goal14Completions",
+      "ga:goal15Completions",
+      "ga:goal16Completions",
+      "ga:goal17Completions",
+      "ga:goal18Completions",
+      "ga:goal19Completions",
+      "ga:goal20Completions"
+    ]
+  },
+  {
     "name": "campaign_adcontent_performance",
     "dimensions": [
       "ga:date",

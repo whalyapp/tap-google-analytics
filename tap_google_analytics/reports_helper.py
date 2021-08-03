@@ -5,6 +5,7 @@ from tap_google_analytics.ga_client import GAClient
 
 LOGGER = singer.get_logger()
 
+
 class ReportsHelper:
     def __init__(self, config, reports_definition):
         self.reports_definition = reports_definition
@@ -66,7 +67,8 @@ class ReportsHelper:
             stream_metadata = {
                 "metadata": {
                     "inclusion": "automatic",
-                    "table-key-properties": None
+                    "table-key-properties": None,
+                    "forced-replication-method": "INCREMENTAL"
                 },
                 "breadcrumb": []
             }
@@ -81,7 +83,7 @@ class ReportsHelper:
                     date_dimension_included = True
 
                 data_type = self.client.lookup_data_type('dimension', dimension)
-                dimension = dimension.replace("ga:","ga_")
+                dimension = dimension.replace("ga:", "ga_")
                 schema['properties'][dimension] = {
                     "type": [data_type],
                 }
@@ -100,11 +102,11 @@ class ReportsHelper:
             # Add the metrics to the schema
             for metric in report['metrics']:
                 data_type = self.client.lookup_data_type('metric', metric)
-                metric = metric.replace("ga:","ga_")
+                metric = metric.replace("ga:", "ga_")
 
                 schema['properties'][metric] = {
                     # metrics are allowed to also have null values
-                    "type": ["null",data_type],
+                    "type": ["null", data_type],
                 }
 
                 metadata.append({
@@ -142,7 +144,9 @@ class ReportsHelper:
                 'stream': schema_name,
                 'tap_stream_id': schema_name,
                 'schema': schema,
-                'metadata' : metadata
+                # 'key_properties': table_key_properties,
+                'metadata': metadata,
+                'replication_method': 'INCREMENTAL'
             }
             streams.append(catalog_entry)
 
@@ -182,7 +186,7 @@ class ReportsHelper:
         # check that all the dimensions are proper Google Analytics Dimensions
         for dimension in dimensions:
             if not dimension.startswith(('ga:dimension', 'ga:customVarName', 'ga:customVarValue')) \
-               and dimension not in self.client.dimensions_ref:
+                    and dimension not in self.client.dimensions_ref:
                 LOGGER.critical("'{}' is not a valid Google Analytics dimension".format(dimension))
                 LOGGER.info("For details see https://developers.google.com/analytics/devguides/reporting/core/dimsmets")
                 sys.exit(1)
@@ -197,7 +201,7 @@ class ReportsHelper:
                 # Custom Google Analytics Metrics ga:searchGoalXXConversionRate
                 continue
             elif not metric.startswith(('ga:metric', 'ga:calcMetric')) \
-               and metric not in self.client.metrics_ref:
+                    and metric not in self.client.metrics_ref:
                 LOGGER.critical("'{}' is not a valid Google Analytics metric".format(metric))
                 LOGGER.info("For details see https://developers.google.com/analytics/devguides/reporting/core/dimsmets")
                 sys.exit(1)
@@ -205,9 +209,9 @@ class ReportsHelper:
     @staticmethod
     def get_report_definition(stream):
         report = {
-            "name" : stream['tap_stream_id'],
-            "dimensions" : [],
-            "metrics" : []
+            "name": stream['tap_stream_id'],
+            "dimensions": [],
+            "metrics": []
         }
 
         stream_metadata = singer.metadata.to_map(stream['metadata'])

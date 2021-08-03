@@ -22,25 +22,28 @@ from tap_google_analytics.error import *
 SCOPES = ['https://www.googleapis.com/auth/analytics.readonly']
 
 NON_FATAL_ERRORS = [
-  'userRateLimitExceeded',
-  'rateLimitExceeded',
-  'quotaExceeded',
-  'internalServerError',
-  'backendError'
+    'userRateLimitExceeded',
+    'rateLimitExceeded',
+    'quotaExceeded',
+    'internalServerError',
+    'backendError'
 ]
 
 # Silence the discovery_cache errors
 logging.getLogger('googleapiclient.discovery_cache').setLevel(logging.DEBUG)
 LOGGER = singer.get_logger()
 DATE_FORMAT = "%Y-%m-%d"
+
+
 def split_days(start_date, end_date):
     dates = []
     current_date = datetime.datetime.strptime(start_date, DATE_FORMAT)
     end_date = datetime.datetime.strptime(end_date, DATE_FORMAT)
     while current_date <= end_date:
-        dates.append( current_date.strftime(DATE_FORMAT))
+        dates.append(current_date.strftime(DATE_FORMAT))
         current_date = current_date + relativedelta(days=1)
     return dates
+
 
 # overwrite the backoff logging, so it only logs a warning
 def backoff_logging(details):
@@ -89,8 +92,10 @@ def is_fatal_error(error):
     if isinstance(error, socket.timeout):
         return False
 
-    status = error.resp.status if getattr(error, 'resp') is not None else None
-    if status in [500, 502, 503]:
+    status = error.resp.status if hasattr(error, 'resp') else None
+    if isinstance(error, BrokenPipeError):
+        return False
+    if status in [500, 503]:
         return False
 
     # Use list of errors defined in:
@@ -160,7 +165,7 @@ class GAClient:
         Returns:
             An authorized Analytics Reporting API V4 service object.
         """
-        return build('analyticsreporting', 'v4', credentials=self.credentials, cache_discovery=False )
+        return build('analyticsreporting', 'v4', credentials=self.credentials, cache_discovery=False)
 
     def fetch_metadata(self):
         """
@@ -193,7 +198,7 @@ class GAClient:
             # This is needed in order to dynamically fetch the metadata for available
             #   metrics and dimensions.
             # (those are not provided in the Analytics Reporting API V4)
-            service = build('analytics', 'v3', credentials=self.credentials, cache_discovery=False )
+            service = build('analytics', 'v3', credentials=self.credentials, cache_discovery=False)
             logging.info("loading meta data")
             results = service.metadata().columns().list(reportType='ga', quotaUser=self.quota_user).execute()
             with open("/tmp/reslts.json", "w") as cache_file:
@@ -261,14 +266,15 @@ class GAClient:
             dates = split_days(self.start_date, self.end_date)
             report_definition = self.generate_report_definition(stream)
             nextPageToken = None
+            last_golden_date = self.start_date
             for date in dates:
-                self.start_date = date
-                self.end_date = date
-                LOGGER.info(f"Retrieving data for day {self.start_date}")
+                LOGGER.info(f"Retrieving data for day {date}")
                 while True:
-                    response = self.query_api(report_definition, nextPageToken)
-                    (nextPageToken, results) = self.process_response(response)
-                    yield results
+                    response = self.query_api(report_definition, date, nextPageToken)
+                    (nextPageToken, results, is_data_golden) = self.process_response(response)
+                    if is_data_golden:
+                        last_golden_date = date
+                    yield results, last_golden_date
 
                     # Keep on looping as long as we have a nextPageToken
                     if nextPageToken is None:
@@ -300,18 +306,18 @@ class GAClient:
         }
 
         for dimension in stream['dimensions']:
-            report_definition['dimensions'].append({'name': dimension.replace("ga_","ga:")})
+            report_definition['dimensions'].append({'name': dimension.replace("ga_", "ga:")})
 
         for metric in stream['metrics']:
-            report_definition['metrics'].append({"expression": metric.replace("ga_","ga:")})
+            report_definition['metrics'].append({"expression": metric.replace("ga_", "ga:")})
 
         return report_definition
 
     @backoff.on_exception(backoff.expo,
-                          (HttpError, socket.timeout),
-                          max_tries=30,
+                          (HttpError, socket.timeout, BrokenPipeError),
+                          max_tries=9,
                           giveup=is_fatal_error)
-    def query_api(self, report_definition, pageToken=None):
+    def query_api(self, report_definition, date, pageToken=None):
         """Queries the Analytics Reporting API V4.
 
         Returns:
@@ -320,15 +326,15 @@ class GAClient:
         return self.analytics.reports().batchGet(
             body={
                 'reportRequests': [
-                {
-                    'viewId': self.view_id,
-                    'dateRanges': [{'startDate': self.start_date, 'endDate': self.end_date}],
-                    'pageSize': '10000',
-                    "samplingLevel":  "LARGE",
-                    'pageToken': pageToken,
-                    'metrics': report_definition['metrics'],
-                    'dimensions': report_definition['dimensions'],
-                }]
+                    {
+                        'viewId': self.view_id,
+                        'dateRanges': [{'startDate': date, 'endDate': date}],
+                        'pageSize': '10000',
+                        "samplingLevel": "LARGE",
+                        'pageToken': pageToken,
+                        'metrics': report_definition['metrics'],
+                        'dimensions': report_definition['dimensions'],
+                    }]
             },
             quotaUser=self.quota_user
         ).execute()
@@ -366,7 +372,6 @@ class GAClient:
                 dimensions = row.get('dimensions', [])
                 dateRangeValues = row.get('metrics', [])
 
-
                 for header, dimension in zip(dimensionHeaders, dimensions):
                     data_type = self.lookup_data_type('dimension', header)
                     # LOGGER.info("Dealing with dimensions - {} - data type {}".format(header, data_type))
@@ -381,7 +386,7 @@ class GAClient:
                     else:
                         value = dimension
 
-                    record[header.replace("ga:","ga_")] = value
+                    record[header.replace("ga:", "ga_")] = value
 
                 for i, values in enumerate(dateRangeValues):
                     for metricHeader, value in zip(metricHeaders, values.get('values')):
@@ -393,14 +398,14 @@ class GAClient:
                         elif metric_type == 'number':
                             value = float(value)
 
-                        record[metric_name.replace("ga:","ga_")] = value
+                        record[metric_name.replace("ga:", "ga_")] = value
 
                 # Also add the [start_date,end_date) used for the report
                 record['report_start_date'] = self.start_date
                 record['report_end_date'] = self.end_date
 
                 results.append(record)
-
-            return (report.get('nextPageToken'), results)
+            is_data_golden = bool(report.get("data", {}).get("isDataGolden", False))
+            return (report.get('nextPageToken'), results, is_data_golden)
         except StopIteration:
             return (None, [])

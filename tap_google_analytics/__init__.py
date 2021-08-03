@@ -8,7 +8,7 @@ from pathlib import Path
 import singer
 from singer import utils, metadata
 
-from tap_google_analytics.ga_client import GAClient
+from tap_google_analytics.ga_client import GAClient, DATE_FORMAT
 from tap_google_analytics.reports_helper import ReportsHelper
 from tap_google_analytics.error import *
 
@@ -18,6 +18,7 @@ REQUIRED_CONFIG_KEYS = [
 ]
 
 LOGGER = singer.get_logger()
+
 
 def discover(config):
     # Load the reports json file
@@ -41,6 +42,7 @@ def discover(config):
     # Generate and return the catalog
     return reports_helper.generate_catalog()
 
+
 def get_selected_streams(catalog):
     '''
     Gets selected streams.  Checks for an empty breadcrumb
@@ -52,10 +54,22 @@ def get_selected_streams(catalog):
 
         # stream metadata will have an empty breadcrumb
         if metadata.get(stream_metadata, (), "selected") \
-          or metadata.get(stream_metadata, (), "inclusion") == 'automatic':
+                or metadata.get(stream_metadata, (), "inclusion") == 'automatic':
             selected_streams.append(stream['tap_stream_id'])
 
     return selected_streams
+
+
+def update_key_properties(stream_schema, stream_metadata):
+    # return a list of key properties based on the dimensions that have been selected
+    key_properties = []
+    for prop, item in stream_schema["properties"].items():
+        ga_type = metadata.get(stream_metadata, ("properties", prop), "ga_type")
+        selected = metadata.get(stream_metadata, ("properties", prop), "selected")
+        if ga_type == "dimension" and selected:
+            key_properties.append(prop)
+    return key_properties
+
 
 def sync(config, state, catalog):
     errors_encountered = False
@@ -68,9 +82,10 @@ def sync(config, state, catalog):
     for stream in catalog['streams']:
         stream_id = stream['tap_stream_id']
         stream_schema = stream['schema']
-
+        if state and stream_id in state:
+            client.start_date = state[stream_id]
         stream_metadata = metadata.to_map(stream['metadata'])
-        key_properties = metadata.get(stream_metadata, (), "table-key-properties")
+        key_properties = update_key_properties(stream_schema, stream_metadata)
 
         if stream_id in selected_stream_ids:
             LOGGER.info('Syncing stream: ' + stream_id)
@@ -78,9 +93,10 @@ def sync(config, state, catalog):
             try:
                 singer.write_schema(stream_id, stream_schema, key_properties)
                 report_definition = ReportsHelper.get_report_definition(stream)
-                for page in client.process_stream(report_definition):
+                for page, date in client.process_stream(report_definition):
                     singer.write_records(stream_id, page)
-
+                    date = (datetime.datetime.strptime(date, DATE_FORMAT) + datetime.timedelta(days=1)).strftime(DATE_FORMAT)
+                    singer.write_state({stream_id: date})
             except TapGaInvalidArgumentError as e:
                 errors_encountered = True
                 LOGGER.error("Skipping stream: '{}' due to invalid report definition.".format(stream_id))
@@ -110,9 +126,11 @@ def sync(config, state, catalog):
 
     return
 
+
 def load_json(path):
     with open(path) as f:
         return json.load(f)
+
 
 def process_args():
     # Parse command line arguments
@@ -141,11 +159,11 @@ def process_args():
     # Process the [start_date, end_date) so that they define an open date window
     # that ends yesterday if end_date is not defined
     start_date = utils.strptime_to_utc(args.config['start_date'])
-    args.config['start_date'] = utils.strftime(start_date,'%Y-%m-%d')
+    args.config['start_date'] = utils.strftime(start_date, '%Y-%m-%d')
 
     end_date = args.config.get('end_date', utils.strftime(utils.now()))
-    end_date = utils.strptime_to_utc(end_date) - datetime.timedelta(days=1)
-    args.config['end_date'] = utils.strftime(end_date ,'%Y-%m-%d')
+    end_date = utils.strptime_to_utc(end_date)
+    args.config['end_date'] = utils.strftime(end_date, '%Y-%m-%d')
 
     if end_date < start_date:
         LOGGER.info("tap-google-analytics: start_date '{}' > end_date '{}'".format(start_date, end_date))
@@ -185,6 +203,7 @@ def process_args():
 
     return args
 
+
 @utils.handle_top_exception(LOGGER)
 def main():
     # Parse command line arguments
@@ -202,6 +221,7 @@ def main():
             catalog = discover(args.config)
 
         sync(args.config, args.state, catalog)
+
 
 if __name__ == "__main__":
     main()
