@@ -90,7 +90,7 @@ def is_fatal_error(error):
         return False
 
     status = error.resp.status if getattr(error, 'resp') is not None else None
-    if status in [500, 503]:
+    if status in [500, 502, 503]:
         return False
 
     # Use list of errors defined in:
