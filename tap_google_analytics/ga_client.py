@@ -95,7 +95,7 @@ def is_fatal_error(error):
     status = error.resp.status if hasattr(error, 'resp') else None
     if isinstance(error, BrokenPipeError):
         return False
-    if status in [500, 503]:
+    if status in [500, 502, 503]:
         return False
 
     # Use list of errors defined in:
