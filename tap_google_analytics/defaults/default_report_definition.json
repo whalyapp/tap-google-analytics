@@ -269,6 +269,7 @@
   {
     "name": "page_flow_tracking",
     "dimensions": [
+      "ga:date",
       "ga:pagePath",
       "ga:pageTitle",
       "ga:landingPagePath",
