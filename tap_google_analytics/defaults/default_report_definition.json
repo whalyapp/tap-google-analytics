@@ -265,5 +265,25 @@
     "metrics": [
       "ga:transactionRevenue"
     ]
+  },
+  {
+    "name": "page_flow_tracking",
+    "dimensions": [
+      "ga:pagePath",
+      "ga:pageTitle",
+      "ga:landingPagePath",
+      "ga:secondPagePath",
+      "ga:exitPagePath",
+      "ga:previousPagePath",
+      "ga:pageDepth"
+    ],
+    "metrics": [
+      "ga:entrances",
+      "ga:pageviews",
+      "ga:exits",
+      "ga:transactions",
+      "ga:transactionsPerSession",
+      "ga:transactionRevenue"
+    ]
   }
 ]
