@@ -271,7 +271,6 @@
     "dimensions": [
       "ga:date",
       "ga:pagePath",
-      "ga:pageTitle",
       "ga:landingPagePath",
       "ga:secondPagePath",
       "ga:exitPagePath",
