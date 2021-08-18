@@ -285,5 +285,23 @@
       "ga:transactionsPerSession",
       "ga:transactionRevenue"
     ]
+  },
+  {
+    "name": "revenue_sources_geo",
+    "dimensions": [
+      "ga:date",
+      "ga:channelGrouping",
+      "ga:sourceMedium",
+      "ga:adContent",
+      "ga:hostname",
+      "ga:city",
+      "ga:country"
+    ],
+    "metrics": [
+      "ga:users",
+      "ga:sessions",
+      "ga:transactions",
+      "ga:transactionRevenue"
+    ]
   }
 ]
