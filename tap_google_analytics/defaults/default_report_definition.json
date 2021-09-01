@@ -282,7 +282,7 @@
       "ga:pageviews",
       "ga:exits",
       "ga:transactions",
-      "ga:transactionsPerSession",
+      "ga:sessions",
       "ga:transactionRevenue"
     ]
   },
