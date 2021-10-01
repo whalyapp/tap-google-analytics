@@ -95,7 +95,6 @@ def sync(config, state, catalog):
                 report_definition = ReportsHelper.get_report_definition(stream)
                 for page, date in client.process_stream(report_definition):
                     singer.write_records(stream_id, page)
-                    date = (datetime.datetime.strptime(date, DATE_FORMAT) + datetime.timedelta(days=1)).strftime(DATE_FORMAT)
                     singer.write_state({stream_id: date})
             except TapGaInvalidArgumentError as e:
                 errors_encountered = True
