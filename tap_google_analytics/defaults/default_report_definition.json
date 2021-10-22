@@ -174,7 +174,8 @@
       "ga:channelGrouping",
       "ga:source",
       "ga:medium",
-      "ga:campaign"
+      "ga:campaign",
+      "ga:country"
     ],
     "metrics": [
       "ga:goal1Completions",
@@ -192,7 +193,8 @@
       "ga:channelGrouping",
       "ga:source",
       "ga:medium",
-      "ga:campaign"
+      "ga:campaign",
+      "ga:country"
     ],
     "metrics": [
       "ga:goal1Completions",
@@ -214,7 +216,8 @@
       "ga:channelGrouping",
       "ga:source",
       "ga:medium",
-      "ga:campaign"
+      "ga:campaign",
+      "ga:country"
     ],
     "metrics": [
       "ga:goal11Completions",
