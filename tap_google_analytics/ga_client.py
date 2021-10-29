@@ -139,7 +139,8 @@ class GAClient:
         self.credentials = self.initialize_credentials(config)
         self.analytics = self.initialize_analyticsreporting()
         self._is_data_golden = True
-        self._dimension_hashes = []
+        self._dimension_hashes = set()
+        self._filter_duplicated = True
 
         (self.dimensions_ref, self.metrics_ref) = self.fetch_metadata()
 
@@ -270,7 +271,7 @@ class GAClient:
             nextPageToken = None
             last_golden_date = None
             for date in dates:
-                self._dimension_hashes = [] # reset the hashes, if the date increments, dimensions will be unique again
+                self._dimension_hashes = set() # reset the hashes, if the date increments, dimensions will be unique again
                 LOGGER.info(f"Retrieving data for day {date}")
                 while True:
                     response = self.query_api(report_definition, date, nextPageToken)
@@ -374,17 +375,19 @@ class GAClient:
                 if not self._is_data_golden:
                     LOGGER.warning("data not golden, needs to be updated again later for fully consistent data")
 
+            duplicates = 0
+
             for row in report.get('data', {}).get('rows', []):
                 record = {}
                 dimensions = row.get('dimensions', [])
                 dateRangeValues = row.get('metrics', [])
 
-                if not self._is_data_golden:
+                if not self._is_data_golden and self._filter_duplicated:
                     dimension_hash = hash(tuple(dimensions))
                     if dimension_hash in self._dimension_hashes:
-                        LOGGER.info("dimensions '{}' duplicated in non-golden data, will be ignored".format(", ".join(dimensions)))
+                        duplicates += 1
                         continue
-                    self._dimension_hashes.append(dimension_hash)
+                    self._dimension_hashes.add(dimension_hash)
 
                 for header, dimension in zip(dimensionHeaders, dimensions):
                     data_type = self.lookup_data_type('dimension', header)
@@ -419,6 +422,8 @@ class GAClient:
                 record['report_end_date'] = self.end_date
 
                 results.append(record)
+            if duplicates > 0:
+                LOGGER.info("ignored {} duplicated records in non-golden data".format(duplicates))
             return (report.get('nextPageToken'), results, self._is_data_golden)
         except StopIteration:
             return (None, [])
