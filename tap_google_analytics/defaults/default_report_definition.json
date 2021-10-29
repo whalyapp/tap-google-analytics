@@ -239,7 +239,9 @@
       "ga:source",
       "ga:medium",
       "ga:campaign",
-      "ga:adContent"
+      "ga:adContent",
+      "ga:keyword",
+      "ga:fullReferrer"
     ],
     "metrics": [
       "ga:users",
@@ -304,7 +306,8 @@
       "ga:users",
       "ga:sessions",
       "ga:transactions",
-      "ga:transactionRevenue"
+      "ga:transactionRevenue",
+      "ga:newUsers"
     ]
   }
 ]
