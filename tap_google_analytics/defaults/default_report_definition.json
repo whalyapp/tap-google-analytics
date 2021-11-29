@@ -41,6 +41,29 @@
       "ga:exitRate"
     ]
   },
+   {
+    "name": "traffic_sources_geo",
+    "dimensions": [
+      "ga:date",
+      "ga:channelGrouping",
+      "ga:campaign",
+      "ga:keyword",
+      "ga:countryIsoCode",
+      "ga:sourceMedium",
+      "ga:adContent"
+    ],
+    "metrics": [
+      "ga:sessions",
+      "ga:transactions",
+      "ga:transactionRevenue",
+      "ga:bounces",
+      "ga:exits",
+      "ga:users",
+      "ga:newUsers",
+      "ga:pageviews",
+      "ga:avgSessionDuration"
+    ]
+  },
   {
     "name": "revenue_sources",
     "dimensions": [
@@ -257,6 +280,28 @@
     ]
   },
   {
+    "name": "campaign_adcontent_performance_v2",
+    "dimensions": [
+      "ga:date",
+      "ga:channelGrouping",
+      "ga:sourceMedium",
+      "ga:campaign",
+      "ga:adContent",
+      "ga:adGroup",
+      "ga:fullReferrer"
+    ],
+    "metrics": [
+      "ga:users",
+      "ga:newUsers",
+      "ga:sessions",
+      "ga:sessionDuration",
+      "ga:pageviews",
+      "ga:bounces",
+      "ga:transactions",
+      "ga:transactionRevenue"
+    ]
+  },
+  {
     "name": "revenue_transactions",
     "dimensions": [
       "ga:date",
@@ -289,6 +334,28 @@
       "ga:transactions",
       "ga:sessions",
       "ga:transactionRevenue"
+    ]
+  },
+  {
+    "name": "page_flow_tracking_geo",
+    "dimensions": [
+      "ga:date",
+      "ga:pagePath",
+      "ga:landingPagePath",
+      "ga:secondPagePath",
+      "ga:exitPagePath",
+      "ga:countryIsoCode",
+      "ga:keyword"
+    ],
+    "metrics": [
+      "ga:entrances",
+      "ga:pageviews",
+      "ga:exits",
+      "ga:transactions",
+      "ga:sessions",
+      "ga:transactionRevenue",
+      "ga:bounces",
+      "ga:avgTimeOnPage"
     ]
   },
   {
