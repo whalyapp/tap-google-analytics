@@ -240,7 +240,7 @@
       "ga:channelGrouping",
       "ga:sourceMedium",
       "ga:adContent",
-      "ga:adGroup,
+      "ga:adGroup",
       "ga:campaign",
       "ga:country"
     ],
