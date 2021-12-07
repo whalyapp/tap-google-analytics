@@ -214,8 +214,9 @@
     "dimensions": [
       "ga:date",
       "ga:channelGrouping",
-      "ga:source",
-      "ga:medium",
+      "ga:sourceMedium",
+      "ga:adContent",
+      "ga:adGroup",
       "ga:campaign",
       "ga:country"
     ],
@@ -237,8 +238,9 @@
     "dimensions": [
       "ga:date",
       "ga:channelGrouping",
-      "ga:source",
-      "ga:medium",
+      "ga:sourceMedium",
+      "ga:adContent",
+      "ga:adGroup,
       "ga:campaign",
       "ga:country"
     ],
