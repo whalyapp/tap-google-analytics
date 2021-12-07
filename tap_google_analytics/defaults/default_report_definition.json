@@ -325,7 +325,6 @@
       "ga:sourceMedium",
       "ga:countryIsoCode",
       "ga:campaign",
-      "ga:channelGrouping",
       "ga:adContent",
       "ga:keyword",
       "ga:transactionId"
