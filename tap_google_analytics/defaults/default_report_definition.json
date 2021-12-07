@@ -317,6 +317,22 @@
     ]
   },
   {
+    "name": "revenue_transactions_geo",
+    "dimensions": [
+      "ga:date",
+      "ga:sourceMedium",
+      "ga:countryIsoCode",
+      "ga:campaign",
+      "ga:channelGrouping",
+      "ga:adContent",
+      "ga:keyword",
+      "ga:transactionId"
+    ],
+    "metrics": [
+      "ga:transactionRevenue"
+    ]
+  },
+  {
     "name": "page_flow_tracking",
     "dimensions": [
       "ga:date",
