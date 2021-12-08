@@ -330,6 +330,8 @@
       "ga:transactionId"
     ],
     "metrics": [
+      "ga:itemRevenue",
+      "ga:itemQuantity"
     ]
   },
   {
