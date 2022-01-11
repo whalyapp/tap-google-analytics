@@ -300,7 +300,8 @@
       "ga:pageviews",
       "ga:bounces",
       "ga:transactions",
-      "ga:transactionRevenue"
+      "ga:transactionRevenue",
+      "ga:adCost"
     ]
   },
   {
