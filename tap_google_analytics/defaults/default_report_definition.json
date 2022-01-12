@@ -258,6 +258,54 @@
     ]
   },
   {
+    "name": "goal_values1_10",
+    "dimensions": [
+      "ga:date",
+      "ga:channelGrouping",
+      "ga:sourceMedium",
+      "ga:adContent",
+      "ga:adGroup",
+      "ga:campaign",
+      "ga:country"
+    ],
+    "metrics": [
+      "ga:goal1Value",
+      "ga:goal2Value,
+      "ga:goal3Value",
+      "ga:goal4Value",
+      "ga:goal5Value",
+      "ga:goal6Value",
+      "ga:goal7Value",
+      "ga:goal8Value",
+      "ga:goal9Value",
+      "ga:goal10Value"
+    ]
+  },
+  {
+    "name": "goal_values11_20",
+    "dimensions": [
+      "ga:date",
+      "ga:channelGrouping",
+      "ga:sourceMedium",
+      "ga:adContent",
+      "ga:adGroup",
+      "ga:campaign",
+      "ga:country"
+    ],
+    "metrics": [
+      "ga:goal11Value",
+      "ga:goal12Value",
+      "ga:goal13Value",
+      "ga:goal14Value",
+      "ga:goal15Value",
+      "ga:goal16Value",
+      "ga:goal17Value",
+      "ga:goal18Value",
+      "ga:goal19Value",
+      "ga:goal20Value"
+    ]
+  },
+  {
     "name": "campaign_adcontent_performance",
     "dimensions": [
       "ga:date",
@@ -300,8 +348,7 @@
       "ga:pageviews",
       "ga:bounces",
       "ga:transactions",
-      "ga:transactionRevenue",
-      "ga:adCost"
+      "ga:transactionRevenue"
     ]
   },
   {
