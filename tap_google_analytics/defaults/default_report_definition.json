@@ -326,7 +326,8 @@
       "ga:pageviewsPerSession",
       "ga:bounceRate",
       "ga:transactions",
-      "ga:transactionRevenue"
+      "ga:transactionRevenue",
+      "ga:adCost"
     ]
   },
   {
