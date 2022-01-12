@@ -270,7 +270,7 @@
     ],
     "metrics": [
       "ga:goal1Value",
-      "ga:goal2Value,
+      "ga:goal2Value",
       "ga:goal3Value",
       "ga:goal4Value",
       "ga:goal5Value",
