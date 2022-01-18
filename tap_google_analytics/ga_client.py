@@ -269,7 +269,7 @@ class GAClient:
             dates = split_days(self.start_date, self.end_date)
             report_definition = self.generate_report_definition(stream)
             nextPageToken = None
-            last_golden_date = None
+            last_golden_date = dates[0]
             for date in dates:
                 self._dimension_hashes = set() # reset the hashes, if the date increments, dimensions will be unique again
                 LOGGER.info(f"Retrieving data for day {date}")
