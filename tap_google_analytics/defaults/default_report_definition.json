@@ -318,8 +318,8 @@
     ],
     "metrics": [
       "ga:users",
+      "ga:newUsers",
       "ga:sessions",
-      "ga:sessionsPerUser",
       "ga:avgSessionDuration",
       "ga:pageviews",
       "ga:pageviewsPerSession",
