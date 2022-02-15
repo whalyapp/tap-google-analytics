@@ -442,5 +442,24 @@
       "ga:transactionRevenue",
       "ga:newUsers"
     ]
+  },
+  {
+    "name": "revenue_sources_utm",
+    "dimensions": [
+      "ga:date",
+      "ga:channelGrouping",
+      "ga:sourceMedium",
+      "ga:adContent",
+      "ga:campaign",
+      "ga:keyword",
+      "ga:country"
+    ],
+    "metrics": [
+      "ga:users",
+      "ga:sessions",
+      "ga:transactions",
+      "ga:transactionRevenue",
+      "ga:newUsers"
+    ]
   }
 ]
