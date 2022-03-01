@@ -106,8 +106,11 @@ def is_fatal_error(error):
 
     if reason == "rateLimitExceeded":
         if message is not None and _is_daily_limit(message):
-            logging.error(message)
-            exit(42)
+            LOGGER.warning(message + ". Check the Date above to see the day when the importing stopped." +
+                           " Your data was partially imported. In order to import the rest of the data, please create "
+                           "an Orchestration. ")
+
+            sys.exit(0)
 
     log_msg = message
     if log_msg is None:
