@@ -463,10 +463,29 @@
     ]
   },
   {
-    "name": "ecommerce_report",
+    "name": "ecommerce_geo",
     "dimensions": [
       "ga:date",
       "ga:country",
+      "ga:continent",
+      "ga:subContinent",
+      "ga:region",
+      "ga:city",
+      "ga:userType"
+    ],
+    "metrics": [
+      "ga:sessions",
+      "ga:transactions",
+      "ga:transactionRevenue",
+      "ga:productAddsToCart",
+      "ga:productCheckouts"
+    ]
+  },
+  {
+    "name": "ecommerce_sources",
+    "dimensions": [
+      "ga:date",
+      "ga:channelGrouping",
       "ga:pagePath",
       "ga:source",
       "ga:medium",
@@ -480,5 +499,4 @@
       "ga:productAddsToCart",
       "ga:productCheckouts"
     ]
-  }
 ]
