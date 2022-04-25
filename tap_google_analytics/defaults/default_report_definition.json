@@ -461,5 +461,24 @@
       "ga:transactionRevenue",
       "ga:newUsers"
     ]
+  },
+  {
+    "name": "ecommerce_report",
+    "dimensions": [
+      "ga:date",
+      "ga:country",
+      "ga:pagePath",
+      "ga:source",
+      "ga:medium",
+      "ga:sourceMedium",
+      "ga:userType"
+    ],
+    "metrics": [
+      "ga:sessions",
+      "ga:transactions",
+      "ga:transactionRevenue",
+      "ga:productAddsToCart",
+      "ga:productCheckouts"
+    ]
   }
 ]
