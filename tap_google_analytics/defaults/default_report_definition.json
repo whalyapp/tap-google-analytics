@@ -499,5 +499,18 @@
       "ga:productAddsToCart",
       "ga:productCheckouts"
     ]
+  },
+  {
+    "name": "ecommerce_report",
+    "dimensions": [
+      "ga:date",
+      "ga:userType"
+    ],
+    "metrics": [
+      "ga:sessions",
+      "ga:transactions",
+      "ga:productAddsToCart",
+      "ga:productCheckouts"
+    ]
   }
 ]
