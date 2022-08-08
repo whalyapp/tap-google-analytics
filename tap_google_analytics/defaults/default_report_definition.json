@@ -517,14 +517,14 @@
     "name": "coupon_report",
     "dimensions": [
       "ga:date",
+      "ga:orderCouponCode",
+      "ga:productCouponCode",
       "ga:channelGrouping",
       "ga:source",
       "ga:sourceMedium",
       "ga:medium"
     ],
     "metrics": [
-      "ga:orderCouponCode",
-      "ga:productCouponCode",
       "ga:itemRevenue",
       "ga:adClicks",
       "ga:transactions"
