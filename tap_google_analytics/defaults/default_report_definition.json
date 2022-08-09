@@ -518,7 +518,6 @@
     "dimensions": [
       "ga:date",
       "ga:orderCouponCode",
-      "ga:productCouponCode",
       "ga:channelGrouping",
       "ga:source",
       "ga:sourceMedium",
@@ -538,7 +537,7 @@
       "ga:landingPagePath"
     ],
     "metrics": [
-      "ga:sessionCount",
+      "ga:sessions",
       "ga:avgSessionDuration",
       "ga:bounceRate",
       "ga:uniquePurchases",
