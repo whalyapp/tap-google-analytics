@@ -529,5 +529,21 @@
       "ga:adClicks",
       "ga:transactions"
     ]
+  },
+  {
+    "name": "ecommerce_landing_report",
+    "dimensions": [
+      "ga:date",
+      "ga:country",
+      "ga:landingPagePath"
+    ],
+    "metrics": [
+      "ga:sessionCount",
+      "ga:avgSessionDuration",
+      "ga:bounceRate",
+      "ga:uniquePurchases",
+      "ga:quantityAddedToCart",
+      "ga:productCheckouts"
+    ]
   }
 ]
