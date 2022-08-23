@@ -526,7 +526,6 @@
     ],
     "metrics": [
       "ga:itemRevenue",
-      "ga:adClicks",
       "ga:transactions",
       "ga:transactionRevenue"
     ]
