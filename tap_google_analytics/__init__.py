@@ -96,6 +96,7 @@ def sync(config, state, catalog):
                 for page, date in client.process_stream(report_definition):
                     singer.write_records(stream_id, page)
                     if date is not None: # we need to update all dates that are not "golden", even if it's the start date
+                        state = {stream_id: date}
                         singer.write_state({stream_id: date})
             except TapGaInvalidArgumentError as e:
                 errors_encountered = True
@@ -103,9 +104,14 @@ def sync(config, state, catalog):
                 LOGGER.debug("Error: '{}'.".format(e))
             except TapGaRateLimitError as e:
                 errors_encountered = True
+                state['partial'] = {'partial': True, 'resume': False}
+                singer.write_state(state)
                 LOGGER.error("Skipping stream: '{}' due to Rate Limit Errors.".format(stream_id))
-                LOGGER.debug("Error: '{}'.".format(e))
+                LOGGER.warning(format(e) + ". Check the Date above to see the day when the importing stopped." +
+                               " Your data was partially imported. In order to import the rest of the data, please create "
+                               "an Orchestration. ")
             except TapGaQuotaExceededError as e:
+                state['partial'] = {'partial': True, 'resume': False}
                 errors_encountered = True
                 LOGGER.error("Skipping stream: '{}' due to Quota Exceeded Errors.".format(stream_id))
                 LOGGER.debug("Error: '{}'.".format(e))
