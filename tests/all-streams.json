@@ -1,0 +1,6783 @@
+{
+  "streams": [
+    {
+      "stream": "website_overview",
+      "tap_stream_id": "website_overview",
+      "schema": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "ga_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_users": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_newUsers": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_sessions": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_sessionsPerUser": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "ga_avgSessionDuration": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "ga_pageviews": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_pageviewsPerSession": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "ga_avgTimeOnPage": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "ga_bounceRate": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "ga_exitRate": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "report_start_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "report_end_date": {
+            "type": [
+              "string"
+            ]
+          }
+        }
+      },
+      "metadata": [
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "table-key-properties": [
+              "ga_date"
+            ],
+            "forced-replication-method": "INCREMENTAL"
+          },
+          "breadcrumb": []
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_date"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_users"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_newUsers"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_sessions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_sessionsPerUser"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_avgSessionDuration"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_pageviews"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_pageviewsPerSession"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_avgTimeOnPage"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_bounceRate"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_exitRate"
+          ]
+        }
+      ],
+      "replication_method": "INCREMENTAL"
+    },
+    {
+      "stream": "traffic_sources",
+      "tap_stream_id": "traffic_sources",
+      "schema": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "ga_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_channelGrouping": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_source": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_medium": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_socialNetwork": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_sourceMedium": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_adContent": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_users": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_newUsers": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_sessions": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_sessionsPerUser": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "ga_avgSessionDuration": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "ga_pageviews": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_pageviewsPerSession": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "ga_avgTimeOnPage": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "ga_bounceRate": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "ga_exitRate": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "report_start_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "report_end_date": {
+            "type": [
+              "string"
+            ]
+          }
+        }
+      },
+      "metadata": [
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "table-key-properties": [
+              "ga_date",
+              "ga_channelGrouping",
+              "ga_source",
+              "ga_medium",
+              "ga_socialNetwork",
+              "ga_sourceMedium",
+              "ga_adContent"
+            ],
+            "forced-replication-method": "INCREMENTAL"
+          },
+          "breadcrumb": []
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_date"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_channelGrouping"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_source"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_medium"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_socialNetwork"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_sourceMedium"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_adContent"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_users"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_newUsers"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_sessions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_sessionsPerUser"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_avgSessionDuration"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_pageviews"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_pageviewsPerSession"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_avgTimeOnPage"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_bounceRate"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_exitRate"
+          ]
+        }
+      ],
+      "replication_method": "INCREMENTAL"
+    },
+    {
+      "stream": "traffic_sources_geo",
+      "tap_stream_id": "traffic_sources_geo",
+      "schema": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "ga_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_channelGrouping": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_campaign": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_keyword": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_countryIsoCode": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_sourceMedium": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_adContent": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_sessions": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_transactions": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_transactionRevenue": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_bounces": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_exits": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_users": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_newUsers": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_pageviews": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_avgSessionDuration": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "report_start_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "report_end_date": {
+            "type": [
+              "string"
+            ]
+          }
+        }
+      },
+      "metadata": [
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "table-key-properties": [
+              "ga_date",
+              "ga_channelGrouping",
+              "ga_campaign",
+              "ga_keyword",
+              "ga_countryIsoCode",
+              "ga_sourceMedium",
+              "ga_adContent"
+            ],
+            "forced-replication-method": "INCREMENTAL"
+          },
+          "breadcrumb": []
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_date"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_channelGrouping"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_campaign"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_keyword"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_countryIsoCode"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_sourceMedium"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_adContent"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_sessions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_transactions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_transactionRevenue"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_bounces"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_exits"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_users"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_newUsers"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_pageviews"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_avgSessionDuration"
+          ]
+        }
+      ],
+      "replication_method": "INCREMENTAL"
+    },
+    {
+      "stream": "revenue_sources",
+      "tap_stream_id": "revenue_sources",
+      "schema": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "ga_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_channelGrouping": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_source": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_medium": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_socialNetwork": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_sourceMedium": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_adContent": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_users": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_sessions": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_transactions": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_transactionRevenue": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "report_start_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "report_end_date": {
+            "type": [
+              "string"
+            ]
+          }
+        }
+      },
+      "metadata": [
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "table-key-properties": [
+              "ga_date",
+              "ga_channelGrouping",
+              "ga_source",
+              "ga_medium",
+              "ga_socialNetwork",
+              "ga_sourceMedium",
+              "ga_adContent"
+            ],
+            "forced-replication-method": "INCREMENTAL"
+          },
+          "breadcrumb": []
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_date"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_channelGrouping"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_source"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_medium"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_socialNetwork"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_sourceMedium"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_adContent"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_users"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_sessions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_transactions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_transactionRevenue"
+          ]
+        }
+      ],
+      "replication_method": "INCREMENTAL"
+    },
+    {
+      "stream": "pages",
+      "tap_stream_id": "pages",
+      "schema": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "ga_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_hostname": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_pagePath": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_pageviews": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_uniquePageviews": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_avgTimeOnPage": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "ga_entrances": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_entranceRate": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "ga_bounceRate": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "ga_exits": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_exitRate": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "report_start_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "report_end_date": {
+            "type": [
+              "string"
+            ]
+          }
+        }
+      },
+      "metadata": [
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "table-key-properties": [
+              "ga_date",
+              "ga_hostname",
+              "ga_pagePath"
+            ],
+            "forced-replication-method": "INCREMENTAL"
+          },
+          "breadcrumb": []
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_date"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_hostname"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_pagePath"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_pageviews"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_uniquePageviews"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_avgTimeOnPage"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_entrances"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_entranceRate"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_bounceRate"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_exits"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_exitRate"
+          ]
+        }
+      ],
+      "replication_method": "INCREMENTAL"
+    },
+    {
+      "stream": "locations",
+      "tap_stream_id": "locations",
+      "schema": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "ga_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_continent": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_subContinent": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_country": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_region": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_metro": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_city": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_users": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_newUsers": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_sessions": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_sessionsPerUser": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "ga_avgSessionDuration": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "ga_pageviews": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_pageviewsPerSession": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "ga_avgTimeOnPage": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "ga_bounceRate": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "ga_exitRate": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "report_start_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "report_end_date": {
+            "type": [
+              "string"
+            ]
+          }
+        }
+      },
+      "metadata": [
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "table-key-properties": [
+              "ga_date",
+              "ga_continent",
+              "ga_subContinent",
+              "ga_country",
+              "ga_region",
+              "ga_metro",
+              "ga_city"
+            ],
+            "forced-replication-method": "INCREMENTAL"
+          },
+          "breadcrumb": []
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_date"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_continent"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_subContinent"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_country"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_region"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_metro"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_city"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_users"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_newUsers"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_sessions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_sessionsPerUser"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_avgSessionDuration"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_pageviews"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_pageviewsPerSession"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_avgTimeOnPage"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_bounceRate"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_exitRate"
+          ]
+        }
+      ],
+      "replication_method": "INCREMENTAL"
+    },
+    {
+      "stream": "monthly_active_users",
+      "tap_stream_id": "monthly_active_users",
+      "schema": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "ga_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_30dayUsers": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "report_start_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "report_end_date": {
+            "type": [
+              "string"
+            ]
+          }
+        }
+      },
+      "metadata": [
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "table-key-properties": [
+              "ga_date"
+            ],
+            "forced-replication-method": "INCREMENTAL"
+          },
+          "breadcrumb": []
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_date"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_30dayUsers"
+          ]
+        }
+      ],
+      "replication_method": "INCREMENTAL"
+    },
+    {
+      "stream": "four_weekly_active_users",
+      "tap_stream_id": "four_weekly_active_users",
+      "schema": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "ga_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_28dayUsers": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "report_start_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "report_end_date": {
+            "type": [
+              "string"
+            ]
+          }
+        }
+      },
+      "metadata": [
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "table-key-properties": [
+              "ga_date"
+            ],
+            "forced-replication-method": "INCREMENTAL"
+          },
+          "breadcrumb": []
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_date"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_28dayUsers"
+          ]
+        }
+      ],
+      "replication_method": "INCREMENTAL"
+    },
+    {
+      "stream": "two_weekly_active_users",
+      "tap_stream_id": "two_weekly_active_users",
+      "schema": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "ga_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_14dayUsers": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "report_start_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "report_end_date": {
+            "type": [
+              "string"
+            ]
+          }
+        }
+      },
+      "metadata": [
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "table-key-properties": [
+              "ga_date"
+            ],
+            "forced-replication-method": "INCREMENTAL"
+          },
+          "breadcrumb": []
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_date"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_14dayUsers"
+          ]
+        }
+      ],
+      "replication_method": "INCREMENTAL"
+    },
+    {
+      "stream": "weekly_active_users",
+      "tap_stream_id": "weekly_active_users",
+      "schema": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "ga_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_7dayUsers": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "report_start_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "report_end_date": {
+            "type": [
+              "string"
+            ]
+          }
+        }
+      },
+      "metadata": [
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "table-key-properties": [
+              "ga_date"
+            ],
+            "forced-replication-method": "INCREMENTAL"
+          },
+          "breadcrumb": []
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_date"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_7dayUsers"
+          ]
+        }
+      ],
+      "replication_method": "INCREMENTAL"
+    },
+    {
+      "stream": "daily_active_users",
+      "tap_stream_id": "daily_active_users",
+      "schema": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "ga_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_1dayUsers": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "report_start_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "report_end_date": {
+            "type": [
+              "string"
+            ]
+          }
+        }
+      },
+      "metadata": [
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "table-key-properties": [
+              "ga_date"
+            ],
+            "forced-replication-method": "INCREMENTAL"
+          },
+          "breadcrumb": []
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_date"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_1dayUsers"
+          ]
+        }
+      ],
+      "replication_method": "INCREMENTAL"
+    },
+    {
+      "stream": "devices",
+      "tap_stream_id": "devices",
+      "schema": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "ga_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_deviceCategory": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_operatingSystem": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_browser": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_users": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_newUsers": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_sessions": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_sessionsPerUser": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "ga_avgSessionDuration": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "ga_pageviews": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_pageviewsPerSession": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "ga_avgTimeOnPage": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "ga_bounceRate": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "ga_exitRate": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "report_start_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "report_end_date": {
+            "type": [
+              "string"
+            ]
+          }
+        }
+      },
+      "metadata": [
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "table-key-properties": [
+              "ga_date",
+              "ga_deviceCategory",
+              "ga_operatingSystem",
+              "ga_browser"
+            ],
+            "forced-replication-method": "INCREMENTAL"
+          },
+          "breadcrumb": []
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_date"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_deviceCategory"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_operatingSystem"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_browser"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_users"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_newUsers"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_sessions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_sessionsPerUser"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_avgSessionDuration"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_pageviews"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_pageviewsPerSession"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_avgTimeOnPage"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_bounceRate"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_exitRate"
+          ]
+        }
+      ],
+      "replication_method": "INCREMENTAL"
+    },
+    {
+      "stream": "goal_conversions",
+      "tap_stream_id": "goal_conversions",
+      "schema": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "ga_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_channelGrouping": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_source": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_medium": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_campaign": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_country": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_goal1Completions": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal2Completions": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal3Completions": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal4Completions": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal5Completions": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goalCompletionsAll": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "report_start_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "report_end_date": {
+            "type": [
+              "string"
+            ]
+          }
+        }
+      },
+      "metadata": [
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "table-key-properties": [
+              "ga_date",
+              "ga_channelGrouping",
+              "ga_source",
+              "ga_medium",
+              "ga_campaign",
+              "ga_country"
+            ],
+            "forced-replication-method": "INCREMENTAL"
+          },
+          "breadcrumb": []
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_date"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_channelGrouping"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_source"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_medium"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_campaign"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_country"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal1Completions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal2Completions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal3Completions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal4Completions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal5Completions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goalCompletionsAll"
+          ]
+        }
+      ],
+      "replication_method": "INCREMENTAL"
+    },
+    {
+      "stream": "goal_conversions1_10",
+      "tap_stream_id": "goal_conversions1_10",
+      "schema": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "ga_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_channelGrouping": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_sourceMedium": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_adContent": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_adGroup": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_campaign": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_country": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_goal1Completions": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal2Completions": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal3Completions": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal4Completions": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal5Completions": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal6Completions": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal7Completions": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal8Completions": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal9Completions": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal10Completions": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "report_start_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "report_end_date": {
+            "type": [
+              "string"
+            ]
+          }
+        }
+      },
+      "metadata": [
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "table-key-properties": [
+              "ga_date",
+              "ga_channelGrouping",
+              "ga_sourceMedium",
+              "ga_adContent",
+              "ga_adGroup",
+              "ga_campaign",
+              "ga_country"
+            ],
+            "forced-replication-method": "INCREMENTAL"
+          },
+          "breadcrumb": []
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_date"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_channelGrouping"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_sourceMedium"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_adContent"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_adGroup"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_campaign"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_country"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal1Completions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal2Completions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal3Completions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal4Completions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal5Completions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal6Completions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal7Completions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal8Completions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal9Completions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal10Completions"
+          ]
+        }
+      ],
+      "replication_method": "INCREMENTAL"
+    },
+    {
+      "stream": "goal_conversions11_20",
+      "tap_stream_id": "goal_conversions11_20",
+      "schema": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "ga_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_channelGrouping": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_sourceMedium": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_adContent": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_adGroup": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_campaign": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_country": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_goal11Completions": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal12Completions": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal13Completions": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal14Completions": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal15Completions": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal16Completions": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal17Completions": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal18Completions": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal19Completions": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal20Completions": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "report_start_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "report_end_date": {
+            "type": [
+              "string"
+            ]
+          }
+        }
+      },
+      "metadata": [
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "table-key-properties": [
+              "ga_date",
+              "ga_channelGrouping",
+              "ga_sourceMedium",
+              "ga_adContent",
+              "ga_adGroup",
+              "ga_campaign",
+              "ga_country"
+            ],
+            "forced-replication-method": "INCREMENTAL"
+          },
+          "breadcrumb": []
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_date"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_channelGrouping"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_sourceMedium"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_adContent"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_adGroup"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_campaign"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_country"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal11Completions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal12Completions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal13Completions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal14Completions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal15Completions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal16Completions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal17Completions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal18Completions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal19Completions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal20Completions"
+          ]
+        }
+      ],
+      "replication_method": "INCREMENTAL"
+    },
+    {
+      "stream": "goal_values1_10",
+      "tap_stream_id": "goal_values1_10",
+      "schema": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "ga_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_channelGrouping": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_sourceMedium": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_adContent": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_adGroup": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_campaign": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_country": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_goal1Value": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal2Value": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal3Value": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal4Value": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal5Value": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal6Value": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal7Value": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal8Value": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal9Value": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal10Value": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "report_start_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "report_end_date": {
+            "type": [
+              "string"
+            ]
+          }
+        }
+      },
+      "metadata": [
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "table-key-properties": [
+              "ga_date",
+              "ga_channelGrouping",
+              "ga_sourceMedium",
+              "ga_adContent",
+              "ga_adGroup",
+              "ga_campaign",
+              "ga_country"
+            ],
+            "forced-replication-method": "INCREMENTAL"
+          },
+          "breadcrumb": []
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_date"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_channelGrouping"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_sourceMedium"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_adContent"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_adGroup"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_campaign"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_country"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal1Value"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal2Value"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal3Value"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal4Value"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal5Value"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal6Value"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal7Value"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal8Value"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal9Value"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal10Value"
+          ]
+        }
+      ],
+      "replication_method": "INCREMENTAL"
+    },
+    {
+      "stream": "goal_values11_20",
+      "tap_stream_id": "goal_values11_20",
+      "schema": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "ga_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_channelGrouping": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_sourceMedium": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_adContent": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_adGroup": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_campaign": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_country": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_goal11Value": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal12Value": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal13Value": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal14Value": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal15Value": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal16Value": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal17Value": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal18Value": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal19Value": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_goal20Value": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "report_start_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "report_end_date": {
+            "type": [
+              "string"
+            ]
+          }
+        }
+      },
+      "metadata": [
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "table-key-properties": [
+              "ga_date",
+              "ga_channelGrouping",
+              "ga_sourceMedium",
+              "ga_adContent",
+              "ga_adGroup",
+              "ga_campaign",
+              "ga_country"
+            ],
+            "forced-replication-method": "INCREMENTAL"
+          },
+          "breadcrumb": []
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_date"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_channelGrouping"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_sourceMedium"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_adContent"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_adGroup"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_campaign"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_country"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal11Value"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal12Value"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal13Value"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal14Value"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal15Value"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal16Value"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal17Value"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal18Value"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal19Value"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_goal20Value"
+          ]
+        }
+      ],
+      "replication_method": "INCREMENTAL"
+    },
+    {
+      "stream": "campaign_adcontent_performance",
+      "tap_stream_id": "campaign_adcontent_performance",
+      "schema": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "ga_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_source": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_medium": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_campaign": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_adContent": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_keyword": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_fullReferrer": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_users": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_newUsers": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_sessions": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_avgSessionDuration": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "ga_pageviews": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_pageviewsPerSession": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "ga_bounceRate": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "ga_transactions": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_transactionRevenue": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_adCost": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "report_start_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "report_end_date": {
+            "type": [
+              "string"
+            ]
+          }
+        }
+      },
+      "metadata": [
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "table-key-properties": [
+              "ga_date",
+              "ga_source",
+              "ga_medium",
+              "ga_campaign",
+              "ga_adContent",
+              "ga_keyword",
+              "ga_fullReferrer"
+            ],
+            "forced-replication-method": "INCREMENTAL"
+          },
+          "breadcrumb": []
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_date"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_source"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_medium"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_campaign"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_adContent"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_keyword"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_fullReferrer"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_users"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_newUsers"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_sessions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_avgSessionDuration"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_pageviews"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_pageviewsPerSession"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_bounceRate"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_transactions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_transactionRevenue"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_adCost"
+          ]
+        }
+      ],
+      "replication_method": "INCREMENTAL"
+    },
+    {
+      "stream": "campaign_adcontent_performance_v2",
+      "tap_stream_id": "campaign_adcontent_performance_v2",
+      "schema": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "ga_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_channelGrouping": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_sourceMedium": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_campaign": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_adContent": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_adGroup": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_countryIsoCode": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_users": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_newUsers": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_sessions": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_sessionDuration": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "ga_pageviews": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_bounces": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_transactions": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_transactionRevenue": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "report_start_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "report_end_date": {
+            "type": [
+              "string"
+            ]
+          }
+        }
+      },
+      "metadata": [
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "table-key-properties": [
+              "ga_date",
+              "ga_channelGrouping",
+              "ga_sourceMedium",
+              "ga_campaign",
+              "ga_adContent",
+              "ga_adGroup",
+              "ga_countryIsoCode"
+            ],
+            "forced-replication-method": "INCREMENTAL"
+          },
+          "breadcrumb": []
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_date"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_channelGrouping"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_sourceMedium"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_campaign"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_adContent"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_adGroup"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_countryIsoCode"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_users"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_newUsers"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_sessions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_sessionDuration"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_pageviews"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_bounces"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_transactions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_transactionRevenue"
+          ]
+        }
+      ],
+      "replication_method": "INCREMENTAL"
+    },
+    {
+      "stream": "revenue_transactions",
+      "tap_stream_id": "revenue_transactions",
+      "schema": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "ga_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_source": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_medium": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_campaign": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_channelGrouping": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_deviceCategory": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_transactionId": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_transactionRevenue": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "report_start_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "report_end_date": {
+            "type": [
+              "string"
+            ]
+          }
+        }
+      },
+      "metadata": [
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "table-key-properties": [
+              "ga_date",
+              "ga_source",
+              "ga_medium",
+              "ga_campaign",
+              "ga_channelGrouping",
+              "ga_deviceCategory",
+              "ga_transactionId"
+            ],
+            "forced-replication-method": "INCREMENTAL"
+          },
+          "breadcrumb": []
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_date"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_source"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_medium"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_campaign"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_channelGrouping"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_deviceCategory"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_transactionId"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_transactionRevenue"
+          ]
+        }
+      ],
+      "replication_method": "INCREMENTAL"
+    },
+    {
+      "stream": "revenue_transactions_geo",
+      "tap_stream_id": "revenue_transactions_geo",
+      "schema": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "ga_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_sourceMedium": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_countryIsoCode": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_campaign": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_adContent": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_keyword": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_transactionId": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_itemRevenue": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_itemQuantity": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "report_start_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "report_end_date": {
+            "type": [
+              "string"
+            ]
+          }
+        }
+      },
+      "metadata": [
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "table-key-properties": [
+              "ga_date",
+              "ga_sourceMedium",
+              "ga_countryIsoCode",
+              "ga_campaign",
+              "ga_adContent",
+              "ga_keyword",
+              "ga_transactionId"
+            ],
+            "forced-replication-method": "INCREMENTAL"
+          },
+          "breadcrumb": []
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_date"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_sourceMedium"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_countryIsoCode"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_campaign"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_adContent"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_keyword"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_transactionId"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_itemRevenue"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_itemQuantity"
+          ]
+        }
+      ],
+      "replication_method": "INCREMENTAL"
+    },
+    {
+      "stream": "page_flow_tracking",
+      "tap_stream_id": "page_flow_tracking",
+      "schema": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "ga_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_pagePath": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_landingPagePath": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_secondPagePath": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_exitPagePath": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_previousPagePath": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_pageDepth": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_entrances": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_pageviews": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_exits": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_transactions": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_sessions": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_transactionRevenue": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "report_start_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "report_end_date": {
+            "type": [
+              "string"
+            ]
+          }
+        }
+      },
+      "metadata": [
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "table-key-properties": [
+              "ga_date",
+              "ga_pagePath",
+              "ga_landingPagePath",
+              "ga_secondPagePath",
+              "ga_exitPagePath",
+              "ga_previousPagePath",
+              "ga_pageDepth"
+            ],
+            "forced-replication-method": "INCREMENTAL"
+          },
+          "breadcrumb": []
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_date"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_pagePath"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_landingPagePath"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_secondPagePath"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_exitPagePath"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_previousPagePath"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_pageDepth"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_entrances"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_pageviews"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_exits"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_transactions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_sessions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_transactionRevenue"
+          ]
+        }
+      ],
+      "replication_method": "INCREMENTAL"
+    },
+    {
+      "stream": "page_flow_tracking_geo",
+      "tap_stream_id": "page_flow_tracking_geo",
+      "schema": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "ga_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_pagePath": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_landingPagePath": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_secondPagePath": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_exitPagePath": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_countryIsoCode": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_keyword": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_entrances": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_pageviews": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_exits": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_transactions": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_sessions": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_transactionRevenue": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_bounces": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_avgTimeOnPage": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "report_start_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "report_end_date": {
+            "type": [
+              "string"
+            ]
+          }
+        }
+      },
+      "metadata": [
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "table-key-properties": [
+              "ga_date",
+              "ga_pagePath",
+              "ga_landingPagePath",
+              "ga_secondPagePath",
+              "ga_exitPagePath",
+              "ga_countryIsoCode",
+              "ga_keyword"
+            ],
+            "forced-replication-method": "INCREMENTAL"
+          },
+          "breadcrumb": []
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_date"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_pagePath"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_landingPagePath"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_secondPagePath"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_exitPagePath"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_countryIsoCode"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_keyword"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_entrances"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_pageviews"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_exits"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_transactions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_sessions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_transactionRevenue"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_bounces"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_avgTimeOnPage"
+          ]
+        }
+      ],
+      "replication_method": "INCREMENTAL"
+    },
+    {
+      "stream": "revenue_sources_geo",
+      "tap_stream_id": "revenue_sources_geo",
+      "schema": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "ga_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_channelGrouping": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_sourceMedium": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_adContent": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_hostname": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_city": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_country": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_users": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_sessions": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_transactions": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_transactionRevenue": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_newUsers": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "report_start_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "report_end_date": {
+            "type": [
+              "string"
+            ]
+          }
+        }
+      },
+      "metadata": [
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "table-key-properties": [
+              "ga_date",
+              "ga_channelGrouping",
+              "ga_sourceMedium",
+              "ga_adContent",
+              "ga_hostname",
+              "ga_city",
+              "ga_country"
+            ],
+            "forced-replication-method": "INCREMENTAL"
+          },
+          "breadcrumb": []
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_date"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_channelGrouping"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_sourceMedium"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_adContent"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_hostname"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_city"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_country"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_users"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_sessions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_transactions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_transactionRevenue"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_newUsers"
+          ]
+        }
+      ],
+      "replication_method": "INCREMENTAL"
+    },
+    {
+      "stream": "revenue_sources_utm",
+      "tap_stream_id": "revenue_sources_utm",
+      "schema": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "ga_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_channelGrouping": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_sourceMedium": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_adContent": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_campaign": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_keyword": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_country": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_users": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_sessions": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_transactions": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_transactionRevenue": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_newUsers": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "report_start_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "report_end_date": {
+            "type": [
+              "string"
+            ]
+          }
+        }
+      },
+      "metadata": [
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "table-key-properties": [
+              "ga_date",
+              "ga_channelGrouping",
+              "ga_sourceMedium",
+              "ga_adContent",
+              "ga_campaign",
+              "ga_keyword",
+              "ga_country"
+            ],
+            "forced-replication-method": "INCREMENTAL"
+          },
+          "breadcrumb": []
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_date"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_channelGrouping"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_sourceMedium"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_adContent"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_campaign"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_keyword"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_country"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_users"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_sessions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_transactions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_transactionRevenue"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_newUsers"
+          ]
+        }
+      ],
+      "replication_method": "INCREMENTAL"
+    },
+    {
+      "stream": "ecommerce_geo",
+      "tap_stream_id": "ecommerce_geo",
+      "schema": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "ga_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_country": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_continent": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_subContinent": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_region": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_city": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_userType": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_sessions": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_transactions": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_transactionRevenue": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_productAddsToCart": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_productCheckouts": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "report_start_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "report_end_date": {
+            "type": [
+              "string"
+            ]
+          }
+        }
+      },
+      "metadata": [
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "table-key-properties": [
+              "ga_date",
+              "ga_country",
+              "ga_continent",
+              "ga_subContinent",
+              "ga_region",
+              "ga_city",
+              "ga_userType"
+            ],
+            "forced-replication-method": "INCREMENTAL"
+          },
+          "breadcrumb": []
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_date"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_country"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_continent"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_subContinent"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_region"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_city"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_userType"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_sessions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_transactions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_transactionRevenue"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_productAddsToCart"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_productCheckouts"
+          ]
+        }
+      ],
+      "replication_method": "INCREMENTAL"
+    },
+    {
+      "stream": "ecommerce_sources",
+      "tap_stream_id": "ecommerce_sources",
+      "schema": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "ga_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_channelGrouping": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_pagePath": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_source": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_medium": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_sourceMedium": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_userType": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_sessions": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_transactions": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_transactionRevenue": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_productAddsToCart": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_productCheckouts": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "report_start_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "report_end_date": {
+            "type": [
+              "string"
+            ]
+          }
+        }
+      },
+      "metadata": [
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "table-key-properties": [
+              "ga_date",
+              "ga_channelGrouping",
+              "ga_pagePath",
+              "ga_source",
+              "ga_medium",
+              "ga_sourceMedium",
+              "ga_userType"
+            ],
+            "forced-replication-method": "INCREMENTAL"
+          },
+          "breadcrumb": []
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_date"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_channelGrouping"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_pagePath"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_source"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_medium"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_sourceMedium"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_userType"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_sessions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_transactions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_transactionRevenue"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_productAddsToCart"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_productCheckouts"
+          ]
+        }
+      ],
+      "replication_method": "INCREMENTAL"
+    },
+    {
+      "stream": "ecommerce_report",
+      "tap_stream_id": "ecommerce_report",
+      "schema": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "ga_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_userType": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_sessions": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_transactions": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_productAddsToCart": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_productCheckouts": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "report_start_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "report_end_date": {
+            "type": [
+              "string"
+            ]
+          }
+        }
+      },
+      "metadata": [
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "table-key-properties": [
+              "ga_date",
+              "ga_userType"
+            ],
+            "forced-replication-method": "INCREMENTAL"
+          },
+          "breadcrumb": []
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_date"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_userType"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_sessions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_transactions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_productAddsToCart"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_productCheckouts"
+          ]
+        }
+      ],
+      "replication_method": "INCREMENTAL"
+    },
+    {
+      "stream": "coupon_report",
+      "tap_stream_id": "coupon_report",
+      "schema": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "ga_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_campaign": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_orderCouponCode": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_channelGrouping": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_source": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_sourceMedium": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_medium": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_itemRevenue": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ga_transactions": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_transactionRevenue": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "report_start_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "report_end_date": {
+            "type": [
+              "string"
+            ]
+          }
+        }
+      },
+      "metadata": [
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "table-key-properties": [
+              "ga_date",
+              "ga_campaign",
+              "ga_orderCouponCode",
+              "ga_channelGrouping",
+              "ga_source",
+              "ga_sourceMedium",
+              "ga_medium"
+            ],
+            "forced-replication-method": "INCREMENTAL"
+          },
+          "breadcrumb": []
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_date"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_campaign"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_orderCouponCode"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_channelGrouping"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_source"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_sourceMedium"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_medium"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_itemRevenue"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_transactions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_transactionRevenue"
+          ]
+        }
+      ],
+      "replication_method": "INCREMENTAL"
+    },
+    {
+      "stream": "ecommerce_landing_report",
+      "tap_stream_id": "ecommerce_landing_report",
+      "schema": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "ga_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_country": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_landingPagePath": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_sessions": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_avgSessionDuration": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "ga_bounceRate": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "ga_uniquePurchases": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_quantityAddedToCart": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_productCheckouts": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "report_start_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "report_end_date": {
+            "type": [
+              "string"
+            ]
+          }
+        }
+      },
+      "metadata": [
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "table-key-properties": [
+              "ga_date",
+              "ga_country",
+              "ga_landingPagePath"
+            ],
+            "forced-replication-method": "INCREMENTAL"
+          },
+          "breadcrumb": []
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_date"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_country"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_landingPagePath"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_sessions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_avgSessionDuration"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_bounceRate"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_uniquePurchases"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_quantityAddedToCart"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_productCheckouts"
+          ]
+        }
+      ],
+      "replication_method": "INCREMENTAL"
+    }
+  ]
+}
