@@ -545,5 +545,22 @@
       "ga:quantityAddedToCart",
       "ga:productCheckouts"
     ]
+  },
+  {
+    "name": "traffic_sources_userType",
+    "dimensions": [
+      "ga:date",
+      "ga:userType",
+      "ga:country",
+      "ga:campaign",
+      "ga:source",
+      "ga:keyword",
+      "ga:adContent"
+    ],
+    "metrics": [
+      "ga:users",
+      "ga:sessions",
+      "ga:pageviews"
+    ]
   }
 ]
