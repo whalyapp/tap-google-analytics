@@ -6778,6 +6778,211 @@
         }
       ],
       "replication_method": "INCREMENTAL"
+    },
+    {
+      "stream": "traffic_sources_userType",
+      "tap_stream_id": "traffic_sources_userType",
+      "schema": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "ga_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_userType": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_country": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_campaign": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_source": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_keyword": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_adContent": {
+            "type": [
+              "string"
+            ]
+          },
+          "ga_users": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_sessions": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "ga_pageviews": {
+            "type": [
+              "null",
+              "integer"
+            ]
+          },
+          "report_start_date": {
+            "type": [
+              "string"
+            ]
+          },
+          "report_end_date": {
+            "type": [
+              "string"
+            ]
+          }
+        }
+      },
+      "metadata": [
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "table-key-properties": [
+              "ga_date",
+              "ga_userType",
+              "ga_country",
+              "ga_campaign",
+              "ga_source",
+              "ga_keyword",
+              "ga_adContent"
+            ],
+            "forced-replication-method": "INCREMENTAL"
+          },
+          "breadcrumb": []
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_date"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_userType"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_country"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_campaign"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_source"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_keyword"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "dimension"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_adContent"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_users"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_sessions"
+          ]
+        },
+        {
+          "metadata": {
+            "inclusion": "automatic",
+            "selected-by-default": true,
+            "ga_type": "metric"
+          },
+          "breadcrumb": [
+            "properties",
+            "ga_pageviews"
+          ]
+        }
+      ],
+      "replication_method": "INCREMENTAL"
     }
   ]
 }

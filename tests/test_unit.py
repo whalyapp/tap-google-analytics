@@ -1,3 +1,4 @@
+import json
 import unittest
 from unittest import mock
 
@@ -6,7 +7,10 @@ from tap_google_analytics.error import TapGaApiError
 
 import tap_google_analytics.ga_client as gc
 
-from babelfish.utilities import load_json
+
+def load_json(path):
+    with open(path, encoding="utf-8") as fil:
+        return json.load(fil)
 
 
 class TestTapFunctions(unittest.TestCase):
@@ -27,7 +31,7 @@ class TestTapFunctions(unittest.TestCase):
     def test_get_selected_streams(self):
         catalog = load_json('all-streams.json')
         selected_streams = tap_google_analytics.get_selected_streams(catalog)
-        desired_streams = ['website_overview', 'traffic_sources', 'traffic_sources_geo', 'revenue_sources', 'pages', 'locations', 'monthly_active_users', 'four_weekly_active_users', 'two_weekly_active_users', 'weekly_active_users', 'daily_active_users', 'devices', 'goal_conversions', 'goal_conversions1_10', 'goal_conversions11_20', 'goal_values1_10', 'goal_values11_20', 'campaign_adcontent_performance', 'campaign_adcontent_performance_v2', 'revenue_transactions', 'revenue_transactions_geo', 'page_flow_tracking', 'page_flow_tracking_geo', 'revenue_sources_geo', 'revenue_sources_utm', 'ecommerce_geo', 'ecommerce_sources', 'ecommerce_report', 'coupon_report', 'ecommerce_landing_report']
+        desired_streams = ['website_overview', 'traffic_sources', 'traffic_sources_geo', 'revenue_sources', 'pages', 'locations', 'monthly_active_users', 'four_weekly_active_users', 'two_weekly_active_users', 'weekly_active_users', 'daily_active_users', 'devices', 'goal_conversions', 'goal_conversions1_10', 'goal_conversions11_20', 'goal_values1_10', 'goal_values11_20', 'campaign_adcontent_performance', 'campaign_adcontent_performance_v2', 'revenue_transactions', 'revenue_transactions_geo', 'page_flow_tracking', 'page_flow_tracking_geo', 'revenue_sources_geo', 'revenue_sources_utm', 'ecommerce_geo', 'ecommerce_sources', 'ecommerce_report', 'coupon_report', 'ecommerce_landing_report', 'traffic_sources_userType']
 
         self.assertListEqual(selected_streams, desired_streams)
 

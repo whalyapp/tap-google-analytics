@@ -8,8 +8,9 @@ import socket
 import datetime
 import httplib2
 import os
-from apiclient.discovery import build
-from apiclient.errors import HttpError
+
+from googleapiclient.discovery import build
+from googleapiclient.errors import HttpError
 from pathlib import Path
 import traceback
 
@@ -158,9 +159,12 @@ class GAClient:
                 token_uri="https://accounts.google.com/o/oauth2/token",
                 user_agent="tap-google-analytics (via singer.io)"
             )
+
             logging.info("refreshing access token")
             credentials.refresh(httplib2.Http())
+
             logging.info("refreshed successfully")
+
             return credentials
         else:
             return ServiceAccountCredentials.from_json_keyfile_dict(config['client_secrets'], SCOPES)
