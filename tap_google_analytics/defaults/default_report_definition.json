@@ -553,7 +553,7 @@
       "ga:userType",
       "ga:country",
       "ga:campaign",
-      "ga:source",
+      "ga:sourceMedium",
       "ga:keyword",
       "ga:adContent"
     ],
