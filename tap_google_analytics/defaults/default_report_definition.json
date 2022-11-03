@@ -562,5 +562,21 @@
       "ga:sessions",
       "ga:pageviews"
     ]
+  },
+  {
+    "name": "event_tracking",
+    "dimensions": [
+      "ga:eventCategory",
+      "ga:eventAction",
+      "ga:eventLabel"
+    ],
+    "metrics": [
+      "ga:totalEvents",
+      "ga:uniqueEvents",
+      "ga:eventValue",
+      "ga:avgEventValue",
+      "ga:sessionsWithEvent",
+      "ga:eventsPerSessionWithEvent"
+    ]
   }
 ]
