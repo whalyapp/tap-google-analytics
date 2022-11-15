@@ -568,7 +568,8 @@
     "dimensions": [
       "ga:eventCategory",
       "ga:eventAction",
-      "ga:eventLabel"
+      "ga:eventLabel",
+      "ga:date"
     ],
     "metrics": [
       "ga:totalEvents",
