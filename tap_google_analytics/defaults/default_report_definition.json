@@ -579,5 +579,20 @@
       "ga:sessionsWithEvent",
       "ga:eventsPerSessionWithEvent"
     ]
+  },
+  {
+    "name": "ecommerce_hourly_report",
+    "dimensions": [
+      "ga:date",
+      "ga:hour",
+      "ga:dateHour"
+    ],
+    "metrics": [
+      "ga:sessions",
+      "ga:transactionRevenue",
+      "ga:transactions",
+      "ga:productAddsToCart",
+      "ga:productCheckouts"
+    ]
   }
 ]

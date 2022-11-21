@@ -405,7 +405,9 @@ class GAClient:
                     elif data_type == 'number':
                         value = float(dimension)
                     # we should make the date compatible with most of the SQL system
-                    elif header.startswith(('ga:date')):
+                    elif header.startswith('ga:dateHour'):
+                        value = dimension
+                    elif header.startswith('ga:date'):
                         value = datetime.datetime.strptime(dimension, '%Y%m%d').strftime('%Y-%m-%d')
                     else:
                         value = dimension
